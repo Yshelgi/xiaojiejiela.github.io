@@ -167,6 +167,374 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C语言" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/23/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    </h1>
+  
+
+        
+        <a href="/2021/02/23/C%E8%AF%AD%E8%A8%80/" class="archive-article-date">
+  	<time datetime="2021-02-23T03:42:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h1><h2 id="1-程序设计和C语言"><a href="#1-程序设计和C语言" class="headerlink" title="1.程序设计和C语言"></a>1.程序设计和C语言</h2><p><strong>C语言程序结构的特点：</strong></p>
+<ol>
+<li><p>一个程序由一个或多个源程序文件组成</p>
+<ul>
+<li><p>预处理指令</p>
+</li>
+<li><p>全局声明</p>
+</li>
+<li><p>函数定义</p>
+</li>
+</ul>
+</li>
+<li><p>函数是C语言的主要组成部分</p>
+</li>
+<li><p>一个函数包含两个部分</p>
+<ul>
+<li>函数首部（函数名、函数类型、函数属性、函数参数名、参数类型）</li>
+<li>函数体（声明部分+执行部分）</li>
+</ul>
+</li>
+<li><p>程序总是从main函数开始执行的</p>
+</li>
+<li><p>程序中对计算机的操作是由函数中的c语句完成的</p>
+</li>
+<li>在每个数据声明和语句最后必须有一个分号</li>
+<li>C语言本身不提供输入输出语句</li>
+<li>程序应当包含注释</li>
+</ol>
+<p><strong>运行C程序的步骤和方法</strong></p>
+<ul>
+<li>输入编辑源程序 —.cpp</li>
+<li>对源程序进行编译，预处理器（预处理程序）进行编译预处理 —.obj</li>
+<li>进行连接处理,通过”连接编辑程序“软件实现 —.exe</li>
+</ul>
+<p><strong>程序设计的任务</strong></p>
+<ol>
+<li>问题分析</li>
+<li>设计算法</li>
+<li>编写程序</li>
+<li>对源程序进行编辑，编译和连接</li>
+<li>运行程序分析结果</li>
+<li>编写程序文档</li>
+</ol>
+<h2 id="2-算法—-程序的灵魂"><a href="#2-算法—-程序的灵魂" class="headerlink" title="2.算法—-程序的灵魂"></a>2.算法—-程序的灵魂</h2><p><strong>算法+数据结构=程序</strong></p>
+<p>==算法的特性：有穷性、确定性、可行性、输入、输出、==</p>
+<p><strong>三个基本结构</strong></p>
+<ol>
+<li>顺序结构</li>
+<li>选择结构</li>
+<li>循环结构（while until）</li>
+</ol>
+<p><strong>结构化程序设计方法</strong></p>
+<ol>
+<li>自顶向下</li>
+<li>逐步细化</li>
+<li>模块化设计（模块的独立性）</li>
+<li>结构化编码</li>
+</ol>
+<h2 id="3-顺序程序设计"><a href="#3-顺序程序设计" class="headerlink" title="3.顺序程序设计"></a>3.顺序程序设计</h2><p><strong>1.常量</strong></p>
+<p>整型常量</p>
+<p>实型常量</p>
+<p>字符常量</p>
+<ul>
+<li>普通字符</li>
+<li>转义字符</li>
+</ul>
+<p>字符串常量</p>
+<p>符号常量(不加分号)</p>
+<ul>
+<li><code>#define  PI 3.1415</code></li>
+</ul>
+<hr>
+<p><strong>2.变量</strong></p>
+<p>先定义后使用</p>
+<hr>
+<p><strong>3.常变量</strong></p>
+<p><code>const int a=3;</code></p>
+<p>占用存储单元，但是其值不变</p>
+<hr>
+<p><strong>4.标识符</strong></p>
+<p>C语言规定标识符只能由字母、数字、下划线组成，并且第一个字符必须为字母或下划线</p>
+<hr>
+<p><strong>数据类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[数据类型]--&gt;B[基本类型]</span><br><span class="line">A--&gt;C[枚举类型enum]</span><br><span class="line">A--&gt;D[空类型void]</span><br><span class="line">A--&gt;E[派生类型]</span><br><span class="line">B--&gt;F[整型类型]</span><br><span class="line">B--&gt;G[浮点类型]</span><br><span class="line">F--&gt;基本类型int</span><br><span class="line">F--&gt;短整型shortint</span><br><span class="line">F--&gt;长整型longint</span><br><span class="line">F--&gt;双长整型longlongint</span><br><span class="line">F--&gt;字符型char</span><br><span class="line">F--&gt;布尔型bool</span><br><span class="line">G--&gt;单精度浮点型float</span><br><span class="line">G--&gt;双精度浮点型double</span><br><span class="line">G--&gt;复数浮点型float_complex-double_complex</span><br><span class="line">E--&gt;指针类型*</span><br><span class="line">E--&gt;数组类型</span><br><span class="line">E--&gt;结构体类型struct</span><br><span class="line">E--&gt;共用体类型union</span><br><span class="line">E--&gt;函数类型</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><p>基本整型（int）</p>
+<p>四个字节（32位）</p>
+<p>short(2个字节)</p>
+<p>long(4个字节)</p>
+<p>long long int (8个字节)</p>
+<h4 id="字符型数据"><a href="#字符型数据" class="headerlink" title="字符型数据"></a>字符型数据</h4><p>char 1个字节</p>
+<h4 id="浮点型数据"><a href="#浮点型数据" class="headerlink" title="浮点型数据"></a>浮点型数据</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th>字节数</th>
+<th>有效数字</th>
+<th>数值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">float</td>
+<td>4</td>
+<td>6</td>
+<td>0以及1.2x10^-38 ~ 3.4x10^38</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td>8</td>
+<td>15</td>
+<td>0以及2.3x10^-308 ~ 1.7x10^308</td>
+</tr>
+<tr>
+<td style="text-align:center">long double</td>
+<td>8</td>
+<td>15</td>
+<td>0以及2.3x10^-308 ~ 1.7x10^308</td>
+</tr>
+<tr>
+<td style="text-align:center">long double</td>
+<td>16</td>
+<td>19</td>
+<td>0以及3.4x10^-4932~ 1.1x10^4932</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="4-选择结构"><a href="#4-选择结构" class="headerlink" title="4.选择结构"></a>4.选择结构</h2><p>if语句、switch语句</p>
+<p><strong>三目运算符</strong></p>
+<p><code>表达式1 ? 表达式2:表达式3;</code></p>
+<h2 id="5-循环结构"><a href="#5-循环结构" class="headerlink" title="5.循环结构"></a>5.循环结构</h2><p>while语句（<strong>如果不符合条件一次也不执行</strong>）</p>
+<p>do……while语句（<strong>即使不符合条件至少执行一次</strong>）</p>
+<p>for语句</p>
+<p><strong>1.break</strong></p>
+<p>提前终止循环</p>
+<p><strong>2.continue</strong></p>
+<p>提前结束本次循环，接着执行下次循环</p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210214182818163-1614051822400.png" alt="image-20210214182818163"></p>
+<h2 id="6-数组"><a href="#6-数组" class="headerlink" title="6.数组"></a>6.数组</h2><p>数组是一组有序数据的集合，每一个元素属于同一种数据类型</p>
+<p><strong>数组的定义:</strong>   <code>类型符 数组名[常量表达式]</code></p>
+<p>数组引用:数组名[下标]</p>
+<p><strong>初始化</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">3</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">5</span>]=&#123;<span class="number">1</span>&#125;;<span class="comment">//其余都是0</span></span><br><span class="line"><span class="keyword">int</span> a[]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;<span class="comment">//数组长度为3</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//元素全为0</span></span><br></pre></td></tr></table></figure>
+<p>冒泡排序</p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210214202543075-1614051822401.png" alt="image-20210214202543075"></p>
+<p>二维数组的操作基本相似，几个特殊函数</p>
+<p><strong>转置</strong></p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210214234345769-1614051822401.png" alt="image-20210214234345769"></p>
+<p><strong>求最大值，以及行号列号</strong></p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210214235606712-1614051822401.png" alt="image-20210214235606712"></p>
+<p><strong>字符数组</strong></p>
+<p>字符数组存储字符串会在末尾加‘\0’作为结束符</p>
+<p>用字符串初始化赋值会自动添加‘\0’，而字符初始化不会自动加’\0’</p>
+<p>输出遇到‘\0’就停止</p>
+<p><code>‘%c’逐个字符输出   ‘%s’字符串输出</code></p>
+<p><strong>字符串处理函数</strong></p>
+<p>调用“string.h”</p>
+<p>puts(字符数组)：输出字符串</p>
+<p>gets(字符数组)：输入字符串</p>
+<p>strcat(字符数组1,字符数组2)：字符串拼接</p>
+<p>strcpy/strncpy(字符数组1,字符数组2)：字符串复制</p>
+<p>strcmp(字符串1,字符串2)：字符串比较函数（比较ascii码，1&gt;2返回正数，1&lt;2返回负数，相等返回0）</p>
+<p>strlen(字符数组)：返回字符串实际长度（不包含‘\0’）</p>
+<p>strlwr(字符串)：转换为小写</p>
+<p>strupr(字符串)：转换为大写</p>
+<p>统计单词数目</p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210215170147466-1614051822401.png" alt="image-20210215170147466"></p>
+<h2 id="7-函数实现模块化程序设计"><a href="#7-函数实现模块化程序设计" class="headerlink" title="7.函数实现模块化程序设计"></a>7.函数实现模块化程序设计</h2><p>类型名 函数名(){</p>
+<p>​    函数体</p>
+<p>}</p>
+<p>函数体包含声明部分和语句部分</p>
+<p>函数的返回值是通过函数中的return语句获得的</p>
+<p>函数类型决定返回值类型</p>
+<p><strong>汉诺塔问题</strong></p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210215172307942-1614051822401.png" alt="image-20210215172307942"></p>
+<p>数组元素作函数实参，是按值传递，从实参到形参，单向传递</p>
+<p>数组名做函数实参时，传递的是数组首元素地址</p>
+<p>全局变量与局部变量</p>
+<p>范围内局部变量屏蔽全局变量</p>
+<p><strong>动态存储方式和静态存储方式</strong></p>
+<p>变量的属性:数据类型和数据的存储类别</p>
+<p>数据的存储类别包含四种:自动的(auto)、静态的(static)、寄存器的(register)、外部的(extern)</p>
+<p><strong>auto</strong> 函数调用结束就自动释放存储空间  存在动态存储区</p>
+<p><strong>static</strong> 函数调用结束仍保留原值，不释放存储空间  存在静态存储区</p>
+<p><strong>register</strong> 高频率使用的变量存到寄存器中 存在CPU的寄存器中</p>
+<p><strong>extern</strong> 扩展外部变量的作用域</p>
+<p>static为静态（内部）函数，extern为外部函数，默认为extern</p>
+<h2 id="8-指针"><a href="#8-指针" class="headerlink" title="8.指针"></a>8.指针</h2><p>地址指向该变量单元，地址就是指针</p>
+<p><strong>一个变量的地址称为该变量的指针，用一个变量存储其他变量的地址就称为指针变量，指针变量的值是地址</strong></p>
+<p>定义指针变量</p>
+<p><code>类型名 *指针变量名</code></p>
+<p>两个运算符</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>&amp;</th>
+<th>取址运算符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>指针运算符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>指针引用数组</p>
+<p><code>int *p=&amp;a[0];</code> 等价于<code>int *p=a;</code></p>
+<p><strong>通过指针逆置数组</strong></p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210215203653985-1614051822401.png" alt="image-20210215203653985"></p>
+<p>输出二维数组任一行任一列的元素值</p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210215205033288-1614051822401.png" alt="image-20210215205033288"></p>
+<p><strong>指向函数的指针叫函数指针</strong></p>
+<p><code>类型名 （*指针变量名）（函数参数列表）</code></p>
+<p><code>int main(int argc,char *argv[])</code></p>
+<p><strong>内存动态分配</strong> #include<stdlib.h></stdlib.h></p>
+<p>malloc函数：分配空间</p>
+<p>calloc函数：分配n个长度为size的空间</p>
+<p>free函数：释放空间</p>
+<p>realloc函数：重新分配空间</p>
+<h2 id="9-建立自己的数据类型"><a href="#9-建立自己的数据类型" class="headerlink" title="9.建立自己的数据类型"></a>9.建立自己的数据类型</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">char</span> sex;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">float</span> score;</span><br><span class="line">&#125;;<span class="comment">//注意这里带上分号</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//结构体中取值的一些等价使用</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> <span class="title">stu</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> *<span class="title">p</span>;</span></span><br><span class="line">p=&amp;stu;</span><br><span class="line"><span class="comment">//下面是等价的</span></span><br><span class="line"><span class="comment">//stu.name=(*p).name=p-&gt;name</span></span><br></pre></td></tr></table></figure>
+<p>union 共用体</p>
+<p>一段空间共用，但是一个瞬间只能存放一个值</p>
+<p>enum 枚举类型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Weekday&#123;sun,mon,tue,wed,thu,fri,sat&#125;;</span><br><span class="line"><span class="keyword">enum</span> Weekday workday,weekend;</span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line"><span class="keyword">enum</span> Weekday&#123;sun,mon,tue,wed,thu,fri,sat&#125;workday,weekend;</span><br></pre></td></tr></table></figure>
+<p><strong>typedef声明新类型名</strong> 在编译阶段处理</p>
+<h2 id="10-文件的输入输出"><a href="#10-文件的输入输出" class="headerlink" title="10.文件的输入输出"></a>10.文件的输入输出</h2><p>文件分为程序文件，数据文件</p>
+<p>数据流=输入输出</p>
+<p>文件名=文件路径+文件名主干+文件后缀</p>
+<p>数据文件可分为<strong>ascii文件</strong>和<strong>二进制文件</strong></p>
+<p>ascii文件称为文本文件</p>
+<p>二进制文件称为映像文件</p>
+<h3 id="打开关闭文件"><a href="#打开关闭文件" class="headerlink" title="打开关闭文件"></a>打开关闭文件</h3><p>fopen函数打开数据文件</p>
+<p>fopen(“文件名”,“打开方式”)</p>
+<p>fclose函数关闭文件</p>
+<p>fclose(文件指针)</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>调用</th>
+<th>功能</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fgetc</td>
+<td>fgetc(fp)</td>
+<td>从文件中读取一个字符</td>
+<td>成功返回读到字符，失败返回EOF</td>
+</tr>
+<tr>
+<td>fputc</td>
+<td>fputc(ch,fp)</td>
+<td>把ch写到文件中</td>
+<td>成功返回输出字符，失败返回EOF</td>
+</tr>
+<tr>
+<td>fgets</td>
+<td>fgets(str,n,fp)</td>
+<td>从文件中读取长度为n-1的字符串，存到str中</td>
+<td>成功返回地址str，失败返回NULL</td>
+</tr>
+<tr>
+<td>fputs</td>
+<td>fputs(str,fp)</td>
+<td>把str的内容写到文件中</td>
+<td>成功返回0，失败返回非0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>写入文件</p>
+<p><img src="/2021/02/23/C%E8%AF%AD%E8%A8%80/F:%5Ctypora_img%5CC%E8%AF%AD%E8%A8%80%5Cimage-20210215220143957-1614051822402.png" alt="image-20210215220143957"></p>
+<p>fprintf(fp,格式字符串，输出列表) 输出到文件</p>
+<p>fscanf(fp,格式字符串，输入列表) 读取文件</p>
+<p>fread(buffer,size,count,fp)</p>
+<p>fwrite(buffer,size,count,fp)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">复试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习//" class="article-tag-list-link color3">学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/23/C%E8%AF%AD%E8%A8%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-相对论与我们的生活" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -882,7 +1250,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2020
+                2021
                     Shelgi
             </div>
             <div class="footer-right">
@@ -987,11 +1355,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">作为苦逼的考研党，我想说的一些话</a>
+                <a href="javascript:void(0)" class="js-tag color4">一首歌</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">一首歌</a>
+                <a href="javascript:void(0)" class="js-tag color3">复试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">生活中的物理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1003,11 +1379,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">生活中的物理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+                <a href="javascript:void(0)" class="js-tag color2">作为苦逼的考研党，我想说的一些话</a>
               </li>
             
             <div class="clearfix"></div>
